@@ -1,0 +1,143 @@
+/* Backdrop Overlay */
+.authOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 8, 16, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Modal Box */
+.authModal {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(22, 30, 46, 0.85);
+  border: 1px solid rgba(88, 120, 255, 0.35);
+  box-shadow: 0 0 35px rgba(59, 130, 246, 0.25), 0 20px 40px rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  padding: 30px 28px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #f1f5f9;
+}
+
+.authCloseBtn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.authCloseBtn:hover {
+  color: #fff;
+}
+
+.authHeader {
+  text-align: center;
+}
+
+.authHeader h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
+  margin-bottom: 6px;
+}
+
+.authHeader p {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* Form Styles */
+.authForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inputGroup label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+.inputGroup input {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: #fff;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.inputGroup input:focus {
+  border-color: rgba(99, 140, 255, 0.7);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.authSubmitBtn {
+  margin-top: 8px;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.authSubmitBtn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.authError {
+  font-size: 12px;
+  color: #f87171;
+  text-align: center;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.authFooterToggle {
+  text-align: center;
+  font-size: 12.5px;
+  color: #94a3b8;
+  margin-top: 6px;
+}
+
+.authFooterToggle span {
+  color: #60a5fa;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.authFooterToggle span:hover {
+  text-decoration: underline;
+}
