@@ -1,0 +1,229 @@
+.chatWindow {
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: transparent;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Top Navbar */
+.navbar {
+  height: 65px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+.navTitle {
+  font-size: 15px;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+.userCapsule {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 10px 4px 5px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.userIcon {
+  background: #3b82f6;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #fff;
+}
+
+.userCapsule i {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+/* Optional preview card in top right of reference */
+.floatingPreviewCard {
+  position: absolute;
+  top: 70px;
+  right: 32px;
+  width: 220px;
+  background: rgba(22, 29, 44, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(88, 120, 255, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(59, 130, 246, 0.2);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 5;
+}
+
+.previewTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.previewMiniLogo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #3b4d75, #111520);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.previewLines {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lineLong {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  width: 80%;
+}
+
+.lineShort {
+  height: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  width: 50%;
+}
+
+/* Dropdown */
+.dropDown {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  width: 170px;
+  background: #192231;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.dropDownItem {
+  font-size: 13.5px;
+  color: #cbd5e1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropDownItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Bottom Chat Input Capsule */
+.chatInputWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 20px;
+  box-sizing: border-box;
+}
+
+.inputCapsule {
+  width: 100%;
+  max-width: 780px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputCapsule input {
+  width: 100%;
+  background: rgba(25, 34, 49, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(90, 115, 170, 0.35);
+  box-shadow: 0 0 25px rgba(30, 58, 138, 0.25),
+              inset 0 1px 2px rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 16px 54px 16px 22px;
+  font-size: 14.5px;
+  border-radius: 28px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.inputCapsule input::placeholder {
+  color: #718096;
+}
+
+.inputCapsule input:focus {
+  border-color: rgba(99, 140, 255, 0.65);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.35);
+}
+
+.submitBtn {
+  position: absolute;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+}
+
+.submitBtn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.infoFootnote {
+  font-size: 11.5px;
+  color: #64748b;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.infoFootnote a {
+  color: #94a3b8;
+  text-decoration: underline;
+}
