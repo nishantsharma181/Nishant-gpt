@@ -1,0 +1,145 @@
+.chatContainer {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+/* Empty State / Welcome Screen */
+.welcomeScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.welcomeTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  text-shadow: 0 0 35px rgba(96, 165, 250, 0.7),
+               0 0 60px rgba(99, 102, 241, 0.5);
+  margin-bottom: 40px;
+  user-select: none;
+}
+
+/* 3 Suggestion Cards in the middle */
+.cardsRow {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.suggestCard {
+  background: rgba(25, 33, 49, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px;
+  width: 220px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.suggestCard:hover {
+  background: rgba(30, 42, 64, 0.7);
+  border-color: rgba(147, 197, 253, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.suggestCard.activeCard {
+  background: rgba(34, 46, 70, 0.85);
+  border: 1px solid rgba(147, 197, 253, 0.4);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.35);
+  transform: translateY(-8px);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #e2e8f0;
+}
+
+.cardHeader i {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.skeletonLines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.skLine {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+
+.skLine.full { width: 100%; }
+.skLine.half { width: 55%; }
+
+/* Active Chats Stream */
+.chats {
+  width: 100%;
+  max-width: 780px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-sizing: border-box;
+}
+
+.userDiv {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.userMessage {
+  background: rgba(45, 59, 85, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  padding: 12px 18px;
+  border-radius: 18px;
+  max-width: 75%;
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gptDiv {
+  text-align: left;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #e2e8f0;
+  width: 100%;
+}
+
+.gptDiv pre {
+  margin: 12px 0;
+  border-radius: 10px;
+  overflow-x: auto;
+}
