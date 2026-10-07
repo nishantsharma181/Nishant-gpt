@@ -19,6 +19,10 @@ function ChatWindow() {
     const [isOpen, setIsOpen] = useState(false);
     const [authOpen, setAuthOpen] = useState(false);
 
+    // New states
+    const [settingsOpen, setSettingsOpen] = useState(false);
+    const [upgradeOpen, setUpgradeOpen] = useState(false);
+
     const API_URL = "https://nishant-gpt.onrender.com";
 
     const handleLogout = () => {
@@ -149,16 +153,31 @@ function ChatWindow() {
                     {isOpen && user && (
                         <div className="dropDown">
 
-                            <div className="dropDownItem">
+                            {/* SETTINGS */}
+                            <div
+                                className="dropDownItem"
+                                onClick={() => {
+                                    setSettingsOpen(true);
+                                    setIsOpen(false);
+                                }}
+                            >
                                 <i className="fa-solid fa-gear"></i>
                                 Settings
                             </div>
 
-                            <div className="dropDownItem">
+                            {/* UPGRADE PLAN */}
+                            <div
+                                className="dropDownItem"
+                                onClick={() => {
+                                    setUpgradeOpen(true);
+                                    setIsOpen(false);
+                                }}
+                            >
                                 <i className="fa-solid fa-cloud-arrow-up"></i>
                                 Upgrade plan
                             </div>
 
+                            {/* LOGOUT */}
                             <div
                                 className="dropDownItem"
                                 onClick={handleLogout}
@@ -174,11 +193,135 @@ function ChatWindow() {
 
             </div>
 
-            {/* Auth Popup Modal */}
+            {/* Auth Popup */}
             <AuthModal
                 isOpen={authOpen}
                 onClose={() => setAuthOpen(false)}
             />
+
+            {/* SETTINGS POPUP */}
+            {settingsOpen && (
+                <div
+                    className="authOverlay"
+                    onClick={() => setSettingsOpen(false)}
+                >
+                    <div
+                        className="authModal"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+
+                        <button
+                            className="authCloseBtn"
+                            onClick={() => setSettingsOpen(false)}
+                        >
+                            <i className="fa-solid fa-xmark"></i>
+                        </button>
+
+                        <div className="authHeader">
+                            <h2>Settings</h2>
+                            <p>
+                                Manage your Nishant Gpt account
+                            </p>
+                        </div>
+
+                        <div className="inputGroup">
+                            <label>Name</label>
+
+                            <input
+                                type="text"
+                                value={user?.name || ""}
+                                readOnly
+                            />
+                        </div>
+
+                        <div className="inputGroup">
+                            <label>Email</label>
+
+                            <input
+                                type="email"
+                                value={user?.email || ""}
+                                readOnly
+                            />
+                        </div>
+
+                        <button
+                            className="authSubmitBtn"
+                            onClick={() => setSettingsOpen(false)}
+                        >
+                            Done
+                        </button>
+
+                    </div>
+                </div>
+            )}
+
+            {/* UPGRADE PLAN POPUP */}
+            {upgradeOpen && (
+                <div
+                    className="authOverlay"
+                    onClick={() => setUpgradeOpen(false)}
+                >
+                    <div
+                        className="authModal"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+
+                        <button
+                            className="authCloseBtn"
+                            onClick={() => setUpgradeOpen(false)}
+                        >
+                            <i className="fa-solid fa-xmark"></i>
+                        </button>
+
+                        <div className="authHeader">
+                            <h2>Upgrade Plan</h2>
+
+                            <p>
+                                Upgrade options for Nishant Gpt
+                            </p>
+                        </div>
+
+                        <div
+                            style={{
+                                textAlign: "center",
+                                margin: "25px 0",
+                                color: "#cbd5e1"
+                            }}
+                        >
+
+                            <i
+                                className="fa-solid fa-crown"
+                                style={{
+                                    fontSize: "40px",
+                                    marginBottom: "15px"
+                                }}
+                            ></i>
+
+                            <h3
+                                style={{
+                                    color: "white",
+                                    marginBottom: "10px"
+                                }}
+                            >
+                                Premium Plan
+                            </h3>
+
+                            <p>
+                                More features are coming soon.
+                            </p>
+
+                        </div>
+
+                        <button
+                            className="authSubmitBtn"
+                            onClick={() => setUpgradeOpen(false)}
+                        >
+                            Continue with Free Plan
+                        </button>
+
+                    </div>
+                </div>
+            )}
 
             {/* Preview Box */}
             <div className="floatingPreviewCard">
