@@ -9,7 +9,10 @@
   scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
 }
 
-/* Empty State / Welcome Screen */
+/* =========================
+   Welcome Screen
+========================= */
+
 .welcomeScreen {
   display: flex;
   flex-direction: column;
@@ -27,13 +30,17 @@
   font-weight: 800;
   letter-spacing: -0.5px;
   color: #ffffff;
-  text-shadow: 0 0 35px rgba(96, 165, 250, 0.7),
-               0 0 60px rgba(99, 102, 241, 0.5);
+  text-shadow:
+    0 0 35px rgba(96, 165, 250, 0.7),
+    0 0 60px rgba(99, 102, 241, 0.5);
   margin-bottom: 40px;
   user-select: none;
 }
 
-/* 3 Suggestion Cards in the middle */
+/* =========================
+   Suggestion Cards
+========================= */
+
 .cardsRow {
   display: flex;
   gap: 16px;
@@ -98,17 +105,25 @@
   border-radius: 4px;
 }
 
-.skLine.full { width: 100%; }
-.skLine.half { width: 55%; }
+.skLine.full {
+  width: 100%;
+}
 
-/* Active Chats Stream */
+.skLine.half {
+  width: 55%;
+}
+
+/* =========================
+   Chat Messages
+========================= */
+
 .chats {
   width: 100%;
   max-width: 780px;
   padding: 20px 16px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 22px;
   box-sizing: border-box;
 }
 
@@ -128,18 +143,260 @@
   font-size: 14px;
   line-height: 1.5;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin: 0;
 }
+
+/* =========================
+   AI Response
+========================= */
 
 .gptDiv {
   text-align: left;
   font-size: 14.5px;
-  line-height: 1.6;
+  line-height: 1.7;
   color: #e2e8f0;
   width: 100%;
+  overflow-wrap: break-word;
 }
 
+/* Paragraphs */
+.gptDiv p {
+  margin: 0 0 14px 0;
+}
+
+.gptDiv p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   Headings
+========================= */
+
+.gptDiv h1,
+.gptDiv h2,
+.gptDiv h3,
+.gptDiv h4 {
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 22px;
+  margin-bottom: 12px;
+}
+
+.gptDiv h1 {
+  font-size: 24px;
+}
+
+.gptDiv h2 {
+  font-size: 20px;
+}
+
+.gptDiv h3 {
+  font-size: 17px;
+}
+
+.gptDiv h4 {
+  font-size: 15px;
+}
+
+/* =========================
+   Bold / Italic
+========================= */
+
+.gptDiv strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.gptDiv em {
+  color: #cbd5e1;
+}
+
+/* =========================
+   Lists
+========================= */
+
+.gptDiv ul,
+.gptDiv ol {
+  margin: 10px 0 16px 0;
+  padding-left: 26px;
+}
+
+.gptDiv li {
+  margin: 6px 0;
+  padding-left: 3px;
+}
+
+.gptDiv ul li::marker {
+  color: #93c5fd;
+}
+
+.gptDiv ol li::marker {
+  color: #93c5fd;
+}
+
+/* =========================
+   Links
+========================= */
+
+.gptDiv a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.gptDiv a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Inline Code
+========================= */
+
+.gptDiv code {
+  background: rgba(15, 23, 42, 0.9);
+  color: #bfdbfe;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-family: Consolas, Monaco, "Courier New", monospace;
+  font-size: 13px;
+}
+
+/* =========================
+   Code Blocks
+========================= */
+
 .gptDiv pre {
-  margin: 12px 0;
+  margin: 16px 0;
+  padding: 16px;
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   overflow-x: auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.gptDiv pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: 13px;
+  line-height: 1.6;
+  border-radius: 0;
+}
+
+/* =========================
+   Tables
+========================= */
+
+.gptDiv table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 13.5px;
+  display: block;
+  overflow-x: auto;
+}
+
+.gptDiv thead {
+  background: rgba(51, 65, 85, 0.65);
+}
+
+.gptDiv th {
+  color: #ffffff;
+  font-weight: 700;
+  text-align: left;
+  padding: 11px 13px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  white-space: nowrap;
+}
+
+.gptDiv td {
+  color: #cbd5e1;
+  padding: 10px 13px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  vertical-align: top;
+  min-width: 120px;
+}
+
+.gptDiv tbody tr:nth-child(even) {
+  background: rgba(30, 41, 59, 0.35);
+}
+
+.gptDiv tbody tr:hover {
+  background: rgba(51, 65, 85, 0.35);
+}
+
+/* =========================
+   Blockquote
+========================= */
+
+.gptDiv blockquote {
+  margin: 16px 0;
+  padding: 10px 16px;
+  border-left: 3px solid #60a5fa;
+  background: rgba(30, 41, 59, 0.5);
+  color: #cbd5e1;
+  border-radius: 0 8px 8px 0;
+}
+
+/* =========================
+   Horizontal Line
+========================= */
+
+.gptDiv hr {
+  border: none;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  margin: 22px 0;
+}
+
+/* =========================
+   Images
+========================= */
+
+.gptDiv img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+/* =========================
+   Mobile Responsive
+========================= */
+
+@media (max-width: 700px) {
+  .welcomeTitle {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+
+  .cardsRow {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .suggestCard {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .chats {
+    padding: 15px 12px;
+  }
+
+  .userMessage {
+    max-width: 85%;
+  }
+
+  .gptDiv {
+    font-size: 14px;
+  }
+
+  .gptDiv table {
+    font-size: 12px;
+  }
+
+  .gptDiv th,
+  .gptDiv td {
+    padding: 8px 10px;
+  }
 }
