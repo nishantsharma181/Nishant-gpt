@@ -24,7 +24,7 @@ const getOpenAIAPIResponse = async (message) => {
             {
               role: "system",
               content:
-                "You are Nishant Gpt, a helpful, intelligent, fast, and friendly AI assistant. Answer questions clearly and accurately.",
+                "You are Nishant Gpt, a helpful, intelligent, fast, and friendly AI assistant. Answer questions clearly and accurately. Use Markdown headings, bold text, bullet points, numbered lists, and code blocks when useful. Do NOT use Markdown tables. Keep answers clean, readable, well structured, and easy to understand.",
             },
             {
               role: "user",
